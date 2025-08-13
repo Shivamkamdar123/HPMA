@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shivamkamdar123/HPMA-fork/static/css/main.51a3ac06.css",
+    "main.js": "/Shivamkamdar123/HPMA-fork/static/js/main.6ddff77b.js",
+    "index.html": "/Shivamkamdar123/HPMA-fork/index.html",
+    "main.51a3ac06.css.map": "/Shivamkamdar123/HPMA-fork/static/css/main.51a3ac06.css.map",
+    "main.6ddff77b.js.map": "/Shivamkamdar123/HPMA-fork/static/js/main.6ddff77b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51a3ac06.css",
+    "static/js/main.6ddff77b.js"
+  ]
+}
