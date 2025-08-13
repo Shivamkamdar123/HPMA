@@ -1,0 +1,53 @@
+{
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "nodemon server/index.ts",
+    "dev": "concurrently \"npm run server\" \"npm start\""
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@types/cors": "2.8.13",
+    "@types/express": "4.17.17",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/xml2js": "0.4.12",
+    "axios": "^1.11.0",
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.7.1",
+    "react-scripts": "5.0.1",
+    "xml2js": "0.6.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.2.0",
+    "autoprefixer": "^10.4.15",
+    "concurrently": "8.2.1",
+    "nodemon": "3.0.1",
+    "postcss": "^8.4.28",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.3.3",
+    "ts-node": "10.9.1",
+    "typescript": "4.9.5",
+    "web-vitals": "^5.1.0"
+  }
+}

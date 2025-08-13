@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+  <event>
+    <id>1</id>
+    <title>Summer Concert Series</title>
+    <date>2025-08-15</date>
+    <time>19:00</time>
+    <description>Join us for an evening of classical masterpieces performed by our distinguished faculty and students.</description>
+    <venue>Main Concert Hall</venue>
+  </event>
+  <event>
+    <id>2</id>
+    <title>Student Showcase</title>
+    <date>2025-08-20</date>
+    <time>18:30</time>
+    <description>Experience the talent of our emerging artists in this special showcase event.</description>
+    <venue>Recital Room</venue>
+  </event>
+</events>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faculty>
+  <member>
+    <id>1</id>
+    <name>Dr. Sarah Mitchell</name>
+    <title>Head of Piano Department</title>
+    <specialty>Classical Piano</specialty>
+    <bio>Internationally acclaimed pianist with over 20 years of teaching experience.</bio>
+    <image>sarah-mitchell.jpg</image>
+  </member>
+  <member>
+    <id>2</id>
+    <name>Prof. James Wilson</name>
+    <title>Jazz Studies Director</title>
+    <specialty>Jazz Piano, Composition</specialty>
+    <bio>Grammy-nominated jazz musician and educator with extensive performance background.</bio>
+    <image>james-wilson.jpg</image>
+  </member>
+</faculty>
