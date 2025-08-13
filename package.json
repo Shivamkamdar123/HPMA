@@ -1,11 +1,14 @@
 {
+  "homepage": "https://github.com/Shivamkamdar123/HPMA-fork",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "nodemon server/index.ts",
-    "dev": "concurrently \"npm run server\" \"npm start\""
+    "dev": "concurrently \"npm run server\" \"npm start\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -29,10 +32,10 @@
     "@types/xml2js": "0.4.12",
     "axios": "^1.11.0",
     "cors": "2.8.5",
-    "express": "4.18.2",
+    "express": "^4.21.2",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^0.0.0",
     "xml2js": "0.6.2"
   },
   "devDependencies": {
@@ -42,6 +45,7 @@
     "@types/node": "^24.2.0",
     "autoprefixer": "^10.4.15",
     "concurrently": "8.2.1",
+    "gh-pages": "^6.3.0",
     "nodemon": "3.0.1",
     "postcss": "^8.4.28",
     "postcss-cli": "^11.0.1",
