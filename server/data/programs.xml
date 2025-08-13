@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programs>
+  <program>
+    <id>1</id>
+    <name>Classical Piano Performance</name>
+    <duration>4 years</duration>
+    <description>Comprehensive training in classical piano repertoire and performance techniques.</description>
+    <requirements>Advanced piano proficiency, audition required</requirements>
+  </program>
+  <program>
+    <id>2</id>
+    <name>Jazz Studies</name>
+    <duration>3 years</duration>
+    <description>Immersive program focusing on jazz theory, improvisation, and ensemble performance.</description>
+    <requirements>Intermediate instrumental proficiency, music theory knowledge</requirements>
+  </program>
+</programs>
