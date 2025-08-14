@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Shivamkamdar123/HPMA-fork/static/css/main.51a3ac06.css",
-    "main.js": "/Shivamkamdar123/HPMA-fork/static/js/main.6ddff77b.js",
-    "index.html": "/Shivamkamdar123/HPMA-fork/index.html",
-    "main.51a3ac06.css.map": "/Shivamkamdar123/HPMA-fork/static/css/main.51a3ac06.css.map",
-    "main.6ddff77b.js.map": "/Shivamkamdar123/HPMA-fork/static/js/main.6ddff77b.js.map"
+    "main.css": "/HPMA-fork/static/css/main.51a3ac06.css",
+    "main.js": "/HPMA-fork/static/js/main.6ddff77b.js",
+    "index.html": "/HPMA-fork/index.html",
+    "main.51a3ac06.css.map": "/HPMA-fork/static/css/main.51a3ac06.css.map",
+    "main.6ddff77b.js.map": "/HPMA-fork/static/js/main.6ddff77b.js.map"
   },
   "entrypoints": [
     "static/css/main.51a3ac06.css",
