@@ -1,24 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const Navbar: React.FC = () => {
   return (
     <nav className="bg-background-beige shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex justify-center items-center">
-            <Link
-              to="/"
-              className="font-serif text-2xl font-bold"
-            >
+            <Link to="/" className="font-serif text-2xl font-bold">
               <img
-                src="/logo.jpg"
+                // src="/logo.jpg"
+                src={`${process.env.PUBLIC_URL}/logo.jpg`}
                 alt="Logo"
                 className="w-16 h-auto align-item-center"
-              /> 
+              />
             </Link>
-            <span className="font-serif text-3xl font-bold ml-1">HPM ACADEMY</span>
+            <span className="font-serif text-3xl font-bold ml-1">
+              HPM ACADEMY
+            </span>
           </div>
           <div className="hidden md:block">
             <div className=" ml-10 flex items-baseline font-bold space-x-4">
