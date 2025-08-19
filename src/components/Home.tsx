@@ -7,11 +7,9 @@ import {
 } from "@heroicons/react/24/outline";
 import Hero from "./Hero";
 import Programs from "./Programs";
-import Faculty from "./Faculty";
 import Events from "./Events";
 import LessonCard from "./LessonCard";
 import TestimonialCard from "./TestimonialCard";
-import { Link } from "react-router-dom";
 
 interface Lesson {
   title: string;
@@ -94,9 +92,9 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <Hero />
+      <Hero/>
       <div className="flex justify-center my-8">
         <div className="h-[4px] w-1/2 bg-gradient-to-r from-burgundy-900 via-gold-500 to-burgundy-900 rounded-full"></div>
       </div>
@@ -285,12 +283,12 @@ const Home: React.FC = () => {
         </div>
         {/* Schedule a Tour Button on the center with animation */}
         <div className="text-center mt-8 down -12">
-          <Link
-            to="/contact"
+          <a
+            href="/contact"
             className="inline-block bg-orange-500 text-gray-900 px-8 py-3 rounded-md hover:bg-yellow-400 transition-colors duration-300"
           >
             Schedule a Tour
-          </Link>
+          </a>
         </div>
       </section>
 

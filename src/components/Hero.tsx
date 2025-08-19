@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from "react";
+
 
 const Hero: React.FC = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   return (
     <div className="relative bg-gray-900 min-h-screen flex items-center">
       <div className="absolute inset-0">
@@ -27,10 +29,11 @@ const Hero: React.FC = () => {
             Explore Programs
           </a>
           <a
-            href="#contact"
+            onClick={() => setIsBookingOpen(true)}
+            href="/bookingform"
             className="border-2 border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 w-64 sm:w-auto"
           >
-            <span className="flex items-center justify-center space-x-2">
+            <span className="flex items-center justify-center space-x-2 cursor-pointer">
               <svg
                 className="w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"

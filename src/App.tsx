@@ -7,13 +7,14 @@ import About from './components/About';
 import Programs from './components/Programs';
 import Events from './pages/Events';
 import Contact from './components/Contact';
+import BookDemo from './components/BookDemo'
 
 
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="md:min-h-screen min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -21,6 +22,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/bookingform" element={<BookDemo />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
