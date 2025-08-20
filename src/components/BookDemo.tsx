@@ -7,7 +7,7 @@ const BookDemo: React.FC = () => {
     age: "",
     contact: "",
     instrument: "",
-    session: "morning",
+    session: "",
   });
 
   const handleChange = (

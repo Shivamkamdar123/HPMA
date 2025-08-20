@@ -176,7 +176,7 @@ const About: React.FC = () => {
           <p className="text-text-charcoal mb-6">
             Experience the difference of learning with passionate educators
           </p>
-          <button className="btn-primary">Schedule a Visit</button>
+          <button className="btn-primary">it</button>
         </section>
       </div>
     </div>
