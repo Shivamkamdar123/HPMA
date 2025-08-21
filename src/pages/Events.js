@@ -73,20 +73,21 @@ function Events() {
 
         <section className="text-center py-8">
           <h3 className="text-2xl font-serif text-beige-900 mb-4">
-            Want to Perform?
+            See All Performances on Social Media
           </h3>
           <p className="text-gray-600 mb-6">
             Our students get priority access to performance opportunities
           </p>
-          
-          <button
-            type="submit"
-            className="px-6 py-3 bg-gray-200 text-gray-600 font-semibold rounded-lg shadow-md 
-             hover:bg-gold-500 hover:text-yellow-100 
+
+          <a href="https://youtube.com/@hiddenpearlsmusicalacademy1192" target="_blank">
+            <button
+              className="px-6 py-3 bg-gray-200 text-gray-600 font-semibold rounded-lg shadow-md
+             hover:bg-gold-500 hover:text-yellow-100
              transition-all duration-300 ease-in-out transform hover:scale-105"
-          >
-            Join Our Programs
-          </button>
+            >
+              Watch Our Programs
+            </button>
+          </a>
         </section>
       </div>
     </div>

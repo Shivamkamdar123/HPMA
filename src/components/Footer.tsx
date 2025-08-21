@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Facebook, Instagram, Youtube } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
@@ -10,10 +11,39 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-2xl font-serif mb-4">HPM ACADEMY</h3>
             <p className="text-gray-900 text-sm">
-              Excellence in music education since 2005. Nurturing talent, fostering creativity, 
+              Excellence in music education since 2005. Nurturing talent, fostering creativity,
               and building future musicians.
             </p>
+
+            {/* Social Icons */}
+            <div className="flex justify-start space-x-6 mt-6 ml-auto">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6 text-pink-500 hover:scale-150 transition-transform duration-300" />
+              </a>
+              <a
+                href="https://facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6 text-blue-600 hover:scale-150 transition-transform duration-300" />
+              </a>
+              <a
+                href="https://youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-6 h-6 text-red-500 hover:scale-150 transition-transform duration-300" />
+              </a>
+            </div>
           </div>
+
 
           {/* Quick Links */}
           <div>

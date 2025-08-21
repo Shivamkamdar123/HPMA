@@ -21,6 +21,7 @@ module.exports = {
         serif: ['Playfair Display', 'serif'],
         sans: ['Montserrat', 'sans-serif'],
         poppins: ["Poppins", "sans-serif"],
+        ribeye:['Ribeye', 'cursive'],
       },
     },
   },

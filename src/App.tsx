@@ -8,13 +8,16 @@ import Programs from './components/Programs';
 import Events from './pages/Events';
 import Contact from './components/Contact';
 import BookDemo from './components/BookDemo'
-
-
+import ScrollToTop from './components/ScrollToTop';
+import SidebarCTA from './pages/SidebarCTA';
 
 const App: React.FC = () => {
   return (
+
     <Router>
-      <div className="md:min-h-screen min-h-screen flex flex-col">
+      <ScrollToTop />
+        <SidebarCTA />
+      <div className="md:min-h-screen min-h-screen flex flex-col pt-16">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -24,6 +27,7 @@ const App: React.FC = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/bookingform" element={<BookDemo />} />
             <Route path="/contact" element={<Contact />} />
+            {/* <Route path='/cta' element={<SidebarCTA />} /> */}
           </Routes>
         </main>
         <Footer />
