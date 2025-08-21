@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
                   className="w-24 h-auto mt-5 mr-2"
                 />
                 <span className="mt-5 text-2xl md:text-3xl tracking-wide font-ribeye">
-                  HIDDEN PEARL MUSIC ACADEMY
+                  HIDDEN PEARLs MUSIC ACADEMY
                 </span>
               </Link>
             </div>
