@@ -11,8 +11,6 @@ import BookDemo from './components/BookDemo'
 import ScrollToTop from './components/ScrollToTop';
 import SidebarCTA from './pages/SidebarCTA';
 
-
-
 const App: React.FC = () => {
   return (
 
