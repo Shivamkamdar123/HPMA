@@ -2,56 +2,6 @@ import React, { useState } from "react";
 import emailjs from 'emailjs-com'; 
 
 const BookDemo: React.FC = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   gender: "",
-  //   age: "",
-  //   contact: "",
-  //   instrument: "",
-  //   session: "",
-  // });
-
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  // ) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prev) => ({
-  //     ...prev,
-  //     [name]: value,
-  //   }));
-  // };
-
-  // // Handle form submit
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const bookingData = { ...formData };
-
-  //   try{
-  //      const response = await fetch("http://localhost:5000/bookings", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(bookingData),
-  //   });
-  //   if (response.ok) {
-  //     alert("Booking saved successfully!");
-  //     // Reset form if needed
-  //     setFormData({
-  //       name: "",
-  //       gender: "",
-  //       age: "",
-  //       contact: "",
-  //       instrument: "",
-  //       session: "",
-  //     });
-  //   } 
-  //   else {
-  //     alert("Failed to save booking");
-  //   }
-  // } catch (error) {
-  //   console.error("Error saving booking:", error);
-  // }
-  // };
-
   const [formData, setFormData] = useState({
     name: "",
     gender: "",
@@ -137,6 +87,7 @@ const BookDemo: React.FC = () => {
             onChange={handleChange}
             className="border p-2 rounded"
             required
+            aria-label="Choose Gender"
           >
             <option value="">Select gender</option>
             <option value="male">Male</option>
@@ -149,6 +100,7 @@ const BookDemo: React.FC = () => {
         <div className="flex flex-col">
           <label className="font-medium mb-1">Age</label>
           <input
+            aria-label="Choose Age"
             type="number"
             name="age"
             value={formData.age}
@@ -192,6 +144,7 @@ const BookDemo: React.FC = () => {
         <div className="flex flex-col">
           <label className="font-medium mb-1">Instrument to Learn</label>
           <select
+            aria-label="Choose Instrument"
             name="instrument"
             value={formData.instrument}
             onChange={handleChange}
@@ -218,6 +171,7 @@ const BookDemo: React.FC = () => {
           <label className="font-medium mb-1">Preffered Session</label>
           <select
             name="session"
+            aria-label="Choose Session"
             value={formData.session}
             onChange={handleChange}
             className="border p-2 rounded"

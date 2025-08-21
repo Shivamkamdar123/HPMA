@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {collection, addDoc} from 'firebase/firestore';
+import { db } from "./firebase";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,48 +17,22 @@ export default function Contact() {
       ...prev,
       [name]: value,
     }));
-    // setFormData({
-    //   ...formData,
-    //   [e.target.name]: e.target.value,
-    // });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // const existingData = JSON.parse(localStorage.getItem("contactData") || "[]");
-    // existingData.push(formData);
-    // localStorage.setItem("contactData", JSON.stringify(existingData));
-    // console.log("Form Submitted", formData);
-    // alert("Submitted, We contact you soon!");
-
-    const contactFormData = { ...formData };
-
     try {
-      const res = await fetch("http://localhost:5000/contacts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(contactFormData),
+      await addDoc(collection(db, "demoBookings"), formData);
+      alert("Data submitted successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
       });
-
-      if (res.ok) {
-        alert("Submitted, We will get back to you soon");
-
-        // reset
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      }
-      else {
-        alert("Server error Try again later");
-      }
     } catch (error) {
-      console.error("error contact form:", error);
+      console.error("Error adding document: ", error);
     }
   };
-
   return (
     <section
       id="contact"
@@ -181,10 +157,7 @@ export default function Contact() {
           Pradesh 453771. <br /> 📞 Contact number: +91 87703 87979 (also listed
           as 9244805697 and 8962615903)
           <br /> <br />
-          📍 Singapore Township: 13/1 Singapore Township, Green View opposite,
-          RW22+WV2 Indore, Madhya Pradesh, Manglaya Sadak, 453771. <br /> 📞
-          Contact number: +91 9244805697, 8962615903
-          <br /> <br />
+          
           ✉️ lalitkushwah56056@gmail.com
           <br />
           <br />

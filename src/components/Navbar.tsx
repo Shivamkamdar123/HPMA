@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
                   className="w-24 h-auto mt-5 mr-2"
                 />
                 <span className="mt-5 text-2xl md:text-3xl tracking-wide font-ribeye">
-                  HIDDEN PEARLs MUSIC ACADEMY
+                  HIDDEN PEARL MUSIC ACADEMY
                 </span>
               </Link>
             </div>
@@ -70,8 +70,8 @@ const Navbar: React.FC = () => {
             {/* Mobile Menu Button */}
             <div className="md:hidden font-semibold">
               <button
+              
                 onClick={() => setIsOpen((v) => !v)}
-                aria-expanded={isOpen}
                 aria-controls="mobile-menu"
                 className="p-2 rounded-lg focus:outline-none focus:ring"
               >
