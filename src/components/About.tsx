@@ -82,7 +82,7 @@ const About: React.FC = () => {
           {/* image */}
           <div className="flex justify-center h-100 mb-8">
             <img
-              src="https://yt3.googleusercontent.com/NG9nBnktmGnrJBOiZ_qp7mDDiRs3HPxIwO5asUjboxAzI3I1DqFQEyLZGFq-FI2EVFv8WGUABw=w1138-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+              src="https://yt3.leusercontent.com/NG9nBnktmGnrJBOiZ_qp7mDDiRs3HPxIwO5asUjboxAzI3I1DqFQEyLZGFq-FI2EVFv8WGUABw=w1138-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
               alt="Our Story"
               className="className= w-full h-auto object-cover rounded-lg shadow-lg"
             />
