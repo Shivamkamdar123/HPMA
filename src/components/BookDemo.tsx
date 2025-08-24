@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import emailjs from 'emailjs-com'; 
+import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
-const BookDemo: React.FC = () => {
+interface BookDemoProps {
+  onClose?: () => void;
+}
+
+// Remove this duplicate declaration
+
+
+const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     gender: "",
     age: "",
-    email:"",
+    email: "",
     contact: "",
     instrument: "",
     session: "",
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -22,47 +33,120 @@ const BookDemo: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    // Validate phone number (10 digits)
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.contact)) {
+      Swal.fire({
+        title: "Invalid Phone Number",
+        text: "Please enter a valid 10-digit phone number",
+        icon: "error",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#f87171",
+      });
+      return false;
+    }
+
+    // Validate age
+    const age = parseInt(formData.age);
+    if (isNaN(age) || age < 3 || age > 80) {
+      Swal.fire({
+        title: "Invalid Age",
+        text: "Age must be between 3 and 80 years",
+        icon: "error",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#f87171",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_sh9tvq7", // from EmailJS
-         "template_erbi2ms", // from EmailJS
-        formData, // will auto map to template variables
-         "WfkwQliJnshMINu8C"// from EmailJS
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Booking sent successfully!");
-          setFormData({
-            name: "",
-            gender: "",
-            age: "",
-            email:"",
-            contact: "",
-            instrument: "",
-            session: "",
-          });
-        },
-        (error) => {
-          console.error(error.text);
-          alert("Failed to send booking. Try again!");
-        }
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        "service_sh9tvq7",
+        "template_erbi2ms",
+        formData,
+        "WfkwQliJnshMINu8C"
       );
+
+      console.log(result.text);
+
+      // Add success animation
+      const submitButton = document.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.classList.add('animate-success');
+      }
+
+      // Success message with animation
+      await Swal.fire({
+        title: "✅ Success!",
+        text: "Your demo class booking has been submitted successfully.",
+        icon: "success",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#fbbf24",
+        background: "#fff8e1",
+        backdrop: `rgba(0,0,0,0.4)`,
+        showClass: {
+          popup: 'animate__animated animate__fadeInUp'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutDown'
+        }
+      });
+
+      // Reset form and close modal
+      setFormData({
+        name: "",
+        gender: "",
+        age: "",
+        email: "",
+        contact: "",
+        instrument: "",
+        session: "",
+      });
+
+      if (onClose) {
+        onClose();
+      }
+
+    } catch (error: any) {
+      console.error(error.text);
+      Swal.fire({
+        title: "❌ Failed!",
+        text: "Something went wrong. Please try again.",
+        icon: "error",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#f87171",
+        showClass: {
+          popup: 'animate__animated animate__shakeX'
+        }
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
   return (
-    <section
-      id="contact"
-      className="relative bg-beige-100  py-10 px-6 overflow-hidden"
-    >
+    <section className="relative bg-beige-100 py-10 px-6 overflow-hidden">
       <form
         id="bookingform"
-        className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-2xl space-y-4"
+        className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-2xl space-y-4 transform transition-all duration-300 hover:shadow-xl"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold text-burgundy-900 text-center">Demo Class Booking Form</h2>
+        <h2 className="text-2xl font-bold text-burgundy-900 text-center mb-6">
+          Demo Class Booking Form
+        </h2>
 
         {/* Name */}
         <div className="flex flex-col">
@@ -87,7 +171,6 @@ const BookDemo: React.FC = () => {
             onChange={handleChange}
             className="border p-2 rounded"
             required
-            aria-label="Choose Gender"
           >
             <option value="">Select gender</option>
             <option value="male">Male</option>
@@ -100,7 +183,6 @@ const BookDemo: React.FC = () => {
         <div className="flex flex-col">
           <label className="font-medium mb-1">Age</label>
           <input
-            aria-label="Choose Age"
             type="number"
             name="age"
             value={formData.age}
@@ -140,11 +222,10 @@ const BookDemo: React.FC = () => {
           />
         </div>
 
-        {/* Instrument Dropdown */}
+        {/* Instrument */}
         <div className="flex flex-col">
           <label className="font-medium mb-1">Instrument to Learn</label>
           <select
-            aria-label="Choose Instrument"
             name="instrument"
             value={formData.instrument}
             onChange={handleChange}
@@ -155,23 +236,21 @@ const BookDemo: React.FC = () => {
             <option value="piano">Piano</option>
             <option value="violin">Violin</option>
             <option value="drums">Drums</option>
-            <option value="Saxophone">Saxophone</option>
-            <option value="Tabla">Tabla</option>
-            <option value="Sitar">Sitar</option>
-            <option value="Octapad">Octapad</option>
-            <option value="Harmonium">Harmonium</option>
-            <option value="Vocals">Vocals</option>
-            <option value="Other">Other</option>
+            <option value="saxophone">Saxophone</option>
+            <option value="tabla">Tabla</option>
+            <option value="sitar">Sitar</option>
+            <option value="octapad">Octapad</option>
+            <option value="harmonium">Harmonium</option>
+            <option value="vocals">Vocals</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
-
-        {/* Session Dropdown */}
+        {/* Session */}
         <div className="flex flex-col">
-          <label className="font-medium mb-1">Preffered Session</label>
+          <label className="font-medium mb-1">Preferred Session</label>
           <select
             name="session"
-            aria-label="Choose Session"
             value={formData.session}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -182,18 +261,32 @@ const BookDemo: React.FC = () => {
           </select>
         </div>
 
-
         {/* Submit */}
         <div className="text-center">
           <button
             type="submit"
-            className="bg-gold-400 text-black font-semibold px-4 py-2 rounded-lg hover:bg-gold-500"
+            disabled={isSubmitting}
+            className={`relative bg-gold-400 text-black font-semibold px-6 py-2.5 rounded-lg 
+            transform transition-all duration-300
+            hover:bg-gold-500 hover:scale-105 active:scale-95
+            focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-opacity-50
+            disabled:opacity-50 disabled:cursor-not-allowed
+            ${isSubmitting ? 'animate-pulse' : ''}`}
           >
-            Submit
+            {isSubmitting ? (
+              <span className="inline-flex items-center">
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Submitting...
+              </span>
+            ) : (
+              'Submit'
+            )}
           </button>
         </div>
       </form>
-
     </section>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Youtube } from 'lucide-react'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-2xl font-serif mb-4">HPM ACADEMY</h3>
             <p className="text-gray-900 text-sm">
-              Excellence in music education since 2005. Nurturing talent, fostering creativity,
-              and building future musicians.
+              Excellence in music education since 2005. Nurturing talent,
+              fostering creativity, and building future musicians.
             </p>
 
             {/* Social Icons */}
@@ -44,15 +44,42 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-900 transition duration-300 hover:text-gold-400">Home</Link></li>
-              <li><Link to="/about" className="text-gray-900 transition duration-300 hover:text-gold-400">About</Link></li>
-              <li><Link to="/programs" className="text-gray-900 transition duration-300 hover:text-gold-400">Programs</Link></li>
-              <li><Link to="/events" className="text-gray-900 transition duration-300 hover:text-gold-400">Events</Link></li>
+              <li>
+                <Link
+                  to="/"
+                  className="text-gray-900 transition duration-300 hover:text-gold-400"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-gray-900 transition duration-300 hover:text-gold-400"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/programs"
+                  className="text-gray-900 transition duration-300 hover:text-gold-400"
+                >
+                  Programs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/events"
+                  className="text-gray-900 transition duration-300 hover:text-gold-400"
+                >
+                  Events
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -80,7 +107,17 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-900 mt-8 pt-8 text-center text-gray-900">
-          <p>&copy; {new Date().getFullYear()} - Hidden Pearls Musical Academy.</p>
+          <p>
+            &copy; {new Date().getFullYear()} - powered by{" "}
+            <a
+              href="https://kvstechflow.com/" // replace with the actual official site
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:underline"
+            >
+              kvs-techflow...
+            </a>
+          </p>
         </div>
       </div>
     </footer>

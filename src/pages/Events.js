@@ -79,11 +79,13 @@ function Events() {
             Our students get priority access to performance opportunities
           </p>
 
-          <a href="https://youtube.com/@hiddenpearlsmusicalacademy1192" target="_blank">
+          <a
+            href="https://youtube.com/@hiddenpearlsmusicalacademy1192"
+            target="_blank"
+          >
             <button
-              className="px-6 py-3 bg-gray-200 text-gray-600 font-semibold rounded-lg shadow-md
-             hover:bg-gold-500 hover:text-yellow-100
-             transition-all duration-300 ease-in-out transform hover:scale-105"
+              className="px-6 py-3 bg-burgundy-900 text:white rounded-lg shadow-md
+             hover:bg-gold-500 transition-all duration-300 ease-in-out transform hover:scale-105"
             >
               Watch Our Programs
             </button>

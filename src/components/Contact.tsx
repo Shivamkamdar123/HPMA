@@ -10,6 +10,8 @@ export default function Contact() {
     message: "",
   });
 
+
+  
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement

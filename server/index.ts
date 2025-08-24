@@ -3,7 +3,6 @@ import cors from 'cors';
 import { readFile, writeFile } from 'fs/promises';
 import { parseString, Builder } from 'xml2js';
 import { promisify } from 'util';
-import path from 'path';
 
 const app = express();
 const parseXML = promisify(parseString);

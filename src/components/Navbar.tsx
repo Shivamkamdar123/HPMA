@@ -4,50 +4,30 @@ import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const handleScroll = () => {
-    if (window.scrollY <= 100) {
-      setIsVisible(true); // Always visible at the top
-    } else if (window.scrollY < lastScrollY) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-    setLastScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]); // Re-run effect when lastScrollY changes
+  
+  
 
 
   return (
     <header
       className={`
         fixed top-0 left-0 w-full z-50
-        bg-white backdrop-filter backdrop-blur-lg
+        bg-white backdrop-filter 
         shadow-md transition-transform duration-300 ease-in-out
-        ${isVisible ? 'transform translate-y-0' : 'transform -translate-y-full'}
       `}
     >
       <nav className="bg-background-beige shadow-md h-[100px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-3 lg:px-6">
+          <div className="flex items-left justify-between h-20">
             {/* Logo + Title */}
-            <div className="flex items-center">
-              <Link to="/" className="flex items-center">
+            <div className="flex items-left">
+              <Link to="/" className="flex items-center ">
                 <img
                   src={`${process.env.PUBLIC_URL}/logo.jpg`}
                   alt="Logo"
-                  className="w-24 h-auto mt-5 mr-2"
+                  className="w-24 h-auto mt-5"
                 />
-                <span className="mt-5 text-2xl md:text-3xl tracking-wide font-ribeye">
+                <span className="mt-5 p-5 text-base lg:text-3xl sm:text-lg md:text-2xl tracking-wide font-ribeye">
                   HIDDEN PEARL MUSIC ACADEMY
                 </span>
               </Link>
