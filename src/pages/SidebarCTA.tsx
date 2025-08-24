@@ -1,25 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const SidebarCTA: React.FC = () => {
+// interface SidebarCTAProps {
+//   lang: "en" | "hi";
+//   setLang: React.Dispatch<React.SetStateAction<"en" | "hi">>;
+// }
+
+const SidebarCTA: React.FC<any> = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY <= 100) {
+      setIsVisible(true);
+    } else if (window.scrollY < lastScrollY) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <div
-      className="fixed top-1/3 left-0 h-64 w-12 bg-burgundy-900 flex flex-col items-center justify-around z-40 rounded-r-lg shadow-lg font-bold"
+      className={`
+        fixed top-24 right-1 w-auto z-50 mt-1
+        bg-yellow-500 backdrop-filter
+        shadow-md rounded-xl px-3 py-2 flex items-center gap-3
+        transition-transform duration-300 ease-in-out
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+      `}
     >
       {/* Phone */}
       <a
-        href="tel:+911234567890"
-        className="flex items-center justify-center transform -rotate-90 origin-center text-white hover:text-yellow-300 transition whitespace-nowrap text-sm"
+        href="tel:+918770387979"
+        className="text-sm font-semibold text-burgundy-600 hover:text-yellow-500 whitespace-nowrap"
       >
-        +91 12345 67890
+        +91 8770387979
       </a>
-
-      {/* Email */}
-      <a
-        href="mailto:hr@gmail.com"
-        className="flex items-center justify-center transform -rotate-90 origin-center text-white hover:text-yellow-300 transition whitespace-nowrap text-sm"
+      {/* Translate Button with active label */}
+      {/* <button
+        onClick={() => setLang(lang === "en" ? "hi" : "en")}
+        className="text-xs bg-yellow-500 text-white px-2 py-1 rounded hover:bg-burgundy-600 transition"
       >
-        hr@gmail.com
-      </a>
+        {lang === "en" ? "हिन्दी" : "En"}
+      </button> */}
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import {collection, addDoc} from 'firebase/firestore';
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import Swal from "sweetalert2";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -10,7 +11,9 @@ export default function Contact() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -19,11 +22,25 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await addDoc(collection(db, "demoBookings"), formData);
-      alert("Data submitted successfully!");
+
+      Swal.fire({
+        title: "✅ Success!",
+        text: "Your message has been submitted successfully.",
+        icon: "success",
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#fbbf24", // gold shade
+        background: "#fff8e1", // soft background
+        backdrop: `
+    rgba(0,0,0,0.4)
+    left top
+    no-repeat
+  `,
+      });
+
       setFormData({
         name: "",
         email: "",
@@ -136,11 +153,14 @@ export default function Contact() {
       <div className="mt-6 flex justify-center">
         <div className="h-[3px] w-1/3 bg-gradient-to-r from-burgundy-900 via-gold-500 to-burgundy-900 rounded-full"></div>
       </div>
-
       {/* Contact Info */}
       <div className="relative mx-auto text-md mt-9 text-md">
         <p>
-          <h2><strong>Addresses of Music Institute</strong></h2> <br /><br />
+          <h2>
+            <strong>Addresses of Music Institute</strong>
+          </h2>{" "}
+          <br />
+          <br />
           📍 Nanda Nagar: Galli No 9, Near Keshav Kirana Store, Nanda Nagar,
           Indore - 452011. <br /> 📞 Contact number: +91 87703 87979 (also
           listed as 8962615903) <br />
@@ -157,7 +177,6 @@ export default function Contact() {
           Pradesh 453771. <br /> 📞 Contact number: +91 87703 87979 (also listed
           as 9244805697 and 8962615903)
           <br /> <br />
-          
           ✉️ lalitkushwah56056@gmail.com
           <br />
           <br />
