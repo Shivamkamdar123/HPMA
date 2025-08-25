@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/HPMA/static/css/main.276dd864.css",
-    "main.js": "/HPMA/static/js/main.54b63479.js",
+    "main.css": "/HPMA/static/css/main.3237cebc.css",
+    "main.js": "/HPMA/static/js/main.28063d12.js",
     "index.html": "/HPMA/index.html",
-    "main.276dd864.css.map": "/HPMA/static/css/main.276dd864.css.map",
-    "main.54b63479.js.map": "/HPMA/static/js/main.54b63479.js.map"
+    "main.3237cebc.css.map": "/HPMA/static/css/main.3237cebc.css.map",
+    "main.28063d12.js.map": "/HPMA/static/js/main.28063d12.js.map"
   },
   "entrypoints": [
-    "static/css/main.276dd864.css",
-    "static/js/main.54b63479.js"
+    "static/css/main.3237cebc.css",
+    "static/js/main.28063d12.js"
   ]
 }
