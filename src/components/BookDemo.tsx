@@ -140,7 +140,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
   return (
     <section className="relative bg-beige-100 py-10 px-6 overflow-hidden">
       <form
-        id="bookingform"
+        id="BookDemo"
         className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-2xl space-y-4 transform transition-all duration-300 hover:shadow-xl"
         onSubmit={handleSubmit}
       >
@@ -165,8 +165,9 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
         {/* Gender */}
         <div className="flex flex-col">
           <label className="font-medium mb-1">Gender</label>
-          <select
+          <select 
             name="gender"
+            title ="Select gender"
             value={formData.gender}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -184,6 +185,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
           <label className="font-medium mb-1">Age</label>
           <input
             type="number"
+            title = "Enter your age"
             name="age"
             value={formData.age}
             onChange={handleChange}
@@ -227,6 +229,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
           <label className="font-medium mb-1">Instrument to Learn</label>
           <select
             name="instrument"
+            title ="Select an instrument"
             value={formData.instrument}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -251,6 +254,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
           <label className="font-medium mb-1">Preferred Session</label>
           <select
             name="session"
+            title="Select a session"
             value={formData.session}
             onChange={handleChange}
             className="border p-2 rounded"
