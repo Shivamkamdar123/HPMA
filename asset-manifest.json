@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/HPMA/static/css/main.3237cebc.css",
-    "main.js": "/HPMA/static/js/main.28063d12.js",
+    "main.css": "/HPMA/static/css/main.72822974.css",
+    "main.js": "/HPMA/static/js/main.c3f51191.js",
+    "static/media/slick.svg": "/HPMA/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/HPMA/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/HPMA/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/HPMA/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/HPMA/index.html",
-    "main.3237cebc.css.map": "/HPMA/static/css/main.3237cebc.css.map",
-    "main.28063d12.js.map": "/HPMA/static/js/main.28063d12.js.map"
+    "main.72822974.css.map": "/HPMA/static/css/main.72822974.css.map",
+    "main.c3f51191.js.map": "/HPMA/static/js/main.c3f51191.js.map"
   },
   "entrypoints": [
-    "static/css/main.3237cebc.css",
-    "static/js/main.28063d12.js"
+    "static/css/main.72822974.css",
+    "static/js/main.c3f51191.js"
   ]
 }
