@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Programs from "./components/Programs";
-import Events from "./pages/Events";
+import Events from "./components/Events";
 import Contact from "./components/Contact";
 import BookDemo  from "./components/BookDemo";
 import ScrollToTop from "./components/ScrollToTop";
@@ -14,7 +14,7 @@ import SidebarCTA from "./pages/SidebarCTA";
 const App: React.FC = () => {
 
   return (
-    <Router>
+    <Router  basename="/">
       <ScrollToTop />
       <SidebarCTA />
 
@@ -31,12 +31,6 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-
-        {/* Example Translated Text */}
-        {/* <div className="text-center p-4">
-          <h1>{translations[lang].heading}</h1>
-          <p>{translations[lang].description}</p>
-        </div> */}
       </div>
     </Router>
   );

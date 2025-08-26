@@ -7,6 +7,21 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+       keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        marqueeVertical: {
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee linear infinite",
+        "marquee-vertical": "marqueeVertical linear infinite",
+        reverse: "marquee linear infinite reverse",
+      },
       colors: {
         burgundy: {
           900: '#800020',

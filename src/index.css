@@ -17,3 +17,26 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 } 
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Only scroll half because we duplicated */
+}
+
+@keyframes marquee-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical linear infinite;
+}
+
+.animate-reverse {
+  animation-direction: reverse;
+}

@@ -4,15 +4,12 @@ import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
-  
-
 
   return (
     <header
       className={`
         fixed top-0 left-0 w-full z-50
-        bg-white backdrop-filter 
+        bg-white backdrop-filter  
         shadow-md transition-transform duration-300 ease-in-out
       `}
     >
@@ -28,11 +25,10 @@ const Navbar: React.FC = () => {
                   className="w-24 h-auto mt-5"
                 />
                 <span className="mt-5 p-5 text-base lg:text-3xl sm:text-lg md:text-2xl tracking-wide font-ribeye">
-                  HIDDEN PEARL MUSIC ACADEMY
+                  HIDDEN PEARLS MUSIC ACADEMY
                 </span>
               </Link>
             </div>
-
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center space-x-5 font-sans font-semibold text-lg ml-auto mt-5 ">
               <Link to="/" className="hover:text-yellow-400">Home</Link>
@@ -98,7 +94,7 @@ const Navbar: React.FC = () => {
                 Events
               </Link>
               <Link 
-                to="/bookingform" 
+                to="/BookDemo" 
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 rounded-lg hover:bg-beige-200"
               >
