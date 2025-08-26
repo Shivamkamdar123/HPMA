@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
                   alt="Logo"
                   className="w-24 h-auto mt-5"
                 />
-                <span className="mt-5 p-5 text-base lg:text-3xl sm:text-lg md:text-2xl tracking-wide font-ribeye">
+                <span className="mt-5 p-5 text-base lg:text-3xl sm:text-lg md:text-lg gap-x-4 font-ribeye">
                   HIDDEN PEARLS MUSIC ACADEMY
                 </span>
               </Link>
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden font-semibold">
+            <div className="md:hidden font-semibold mt-auto">
               <button
               
                 onClick={() => setIsOpen((v) => !v)}

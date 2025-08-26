@@ -55,7 +55,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative bg-beige-100 py-10 px-6 overflow-hidden"
+      className="relative bg-beige-100 py-10 px-6 overflow-hidden mt-14 mx-5 sm:mt-15 md:mt-20 lg:mt-16 "
     >
       {/* Watermark */}
       <div className="absolute inset-0 pointer-events-none opacity-90 "></div>

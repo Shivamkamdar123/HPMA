@@ -67,14 +67,11 @@ const Testimonial: React.FC = () => {
   };
 
   return (
-    <section className="mx-auto max-w-3xl px-4 py-12">
-      <h2 className="mb-8 text-center text-2xl font-bold text-gray-800">
-        What Our Students & Parents Say
-      </h2>
+    <section className="mx-auto max-w-3xl px-4 py-16">
       <Slider {...settings}>
         {testimonials.map((t) => (
-          <div key={t.id} className="px-4">
-            <div className="rounded-2xl bg-white p-6 shadow-md">
+          <div key={t.id} className="px-8">
+            <div className="rounded-2xl bg-white/50 p-6 shadow-xl shadow-yellow-600 transition-shadow duration-300">
               <p className="text-lg italic text-gray-700">“{t.quote}”</p>
               <div className="mt-4 text-right">
                 <h4 className="text-base font-semibold text-gray-900">{t.author}</h4>

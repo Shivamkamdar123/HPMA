@@ -34,8 +34,8 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div>
-      <section className="bg-background-amber text-text-brown py-12 mb-12">
+    <div className="mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
+      <section className="bg-background-amber text-text-brown py-12 mb-12 md:">
         <div className="relative">
           <h2 className="text-4xl font-serif mb-4 text-center">
             About Our Academy
@@ -48,36 +48,6 @@ const About: React.FC = () => {
       <div className="container mx-auto px-15">
         <section className="mb-11">
           <div className="h-[3px] w-2/3 mx-auto my-8 bg-gradient-to-r from-transparent via-yellow-400 to-transparent shadow-[0_0_10px_#FFD700]"></div>
-
-          {/* <div className="flex flex-col my-8">
-            {[...Array(5)].map((_, i) => (
-              <div key={i} className="h-[1px] bg-gold-500 my-[2px]"></div>
-            ))}
-          </div> */}
-
-          {/* <div className="relative w-full my-8">
-            <svg
-              viewBox="0 0 1440 100"
-              className="w-full h-8"
-              preserveAspectRatio="none"
-            >
-              <path
-                fill="#FFD700"
-                d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z"
-              ></path>
-            </svg>
-          </div> */}
-
-          {/* <div className="flex justify-center my-8">
-            <div className="flex space-x-5">
-              {[...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-3 h-3 bg-gradient-to-br from-gold-500 to-burgundy-900 rotate-45 transform"
-                ></div>
-              ))}
-            </div>
-          </div> */}
 
           {/* image */}
           <div className="flex justify-center h-100 mb-8">
@@ -126,7 +96,7 @@ const About: React.FC = () => {
           ))}
         </section>
 
-        <section className="mb-12">
+        <section className="mb-10">
           <h3 className="text-2xl font-serif text-accent-maroon mb-6">
             Our Approach
           </h3>
@@ -154,7 +124,7 @@ const About: React.FC = () => {
           </div>
         </section>
 
-        <section className="bg-background-beige p-8 rounded-lg mb-12">
+        <section className="bg-background-beige p-8 rounded-lg mb-10">
           <h3 className="text-2xl font-serif text-accent-maroon mb-6">
             Our Facilities
           </h3>

@@ -20,7 +20,7 @@ const SidebarCTA: React.FC<any> = () => {
           📞 Call: +91 89626 15903
         </a>
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/hidden_pearls_musical_academy/?hl=en"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -28,7 +28,7 @@ const SidebarCTA: React.FC<any> = () => {
           <Instagram className="w-5 h-5 text-pink-500 hover:scale-150 transition-transform duration-300" />
         </a>
         <a
-          href="https://facebook.com/"
+          href="https://www.facebook.com/p/Hidden-pearls-music-academy-100064009091932/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -36,7 +36,7 @@ const SidebarCTA: React.FC<any> = () => {
           <Facebook className="w-5 h-5 text-blue-600 hover:scale-150 transition-transform duration-300" />
         </a>
         <a
-          href="https://youtube.com/"
+          href="https://www.youtube.com/@hiddenpearlsmusicalacademy1192"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"

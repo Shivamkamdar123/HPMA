@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex justify-start space-x-6 mt-6 ml-auto">
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/hidden_pearls_musical_academy/?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                 <Instagram className="w-6 h-6 text-pink-500 hover:scale-150 transition-transform duration-300" />
               </a>
               <a
-                href="https://facebook.com/"
+                href="https://www.facebook.com/p/Hidden-pearls-music-academy-100064009091932//"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <Facebook className="w-6 h-6 text-blue-600 hover:scale-150 transition-transform duration-300" />
               </a>
               <a
-                href="https://youtube.com/"
+                href="https://www.youtube.com/@hiddenpearlsmusicalacademy1192"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"

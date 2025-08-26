@@ -73,12 +73,14 @@ const programs: ProgramItem[] = [
 
 const Programs: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
           Our Programs
-        </h2>
-
+        </h2> 
+        <p className="text-xl text-center mb-6">
+            Excellence in Music Education Since 2005
+          </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
             <div

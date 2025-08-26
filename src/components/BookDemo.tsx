@@ -138,15 +138,15 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
   };
 
   return (
-    <section className="relative bg-beige-100 py-10 px-6 overflow-hidden">
+    <section className="relative bg-beige-100 py-10 px-6 overflow-hidden mt-14 mx-5 sm:mt-15 md:mt-18 lg:mt-12 ">
+        <h2 className="text-2xl font-bold text-burgundy-900 text-center mb-6">
+          Demo Class Booking Form
+        </h2>
       <form
         id="BookDemo"
         className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-2xl space-y-4 transform transition-all duration-300 hover:shadow-xl"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold text-burgundy-900 text-center mb-6">
-          Demo Class Booking Form
-        </h2>
 
         {/* Name */}
         <div className="flex flex-col">

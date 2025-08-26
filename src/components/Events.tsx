@@ -34,7 +34,7 @@ function Events() {
 
   return (
     <div>
-      <section className="bg-beige-900 text-gray-900 center-content py-12 mb-12">
+      <section className="bg-beige-900 text-gray-900 center-content py-12 mb-8 mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
         <div className="container mx-auto text-center px-4">
           <h2 className="text-4xl  font-serif mb-4">
             Events & Performances

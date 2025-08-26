@@ -188,15 +188,15 @@ const Home: React.FC = () => {
       {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif text-beige-900 mb-4">
-              What Our Students Say
+          <div className="text-center mb-6">
+            <h2 className="mb-8 text-center text-3xl font-bold text-gray-800">
+              What Our Students & Parents Say
             </h2>
             <p className="text-xl text-gray-600">
               Hear from our community of musicians
             </p>
           </div>
-          <Testimonial/>
+          <Testimonial />
         </div>
       </section>
 
