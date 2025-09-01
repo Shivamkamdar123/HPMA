@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.css": "/HPMA/static/css/main.9a9a8425.css",
-    "main.js": "/HPMA/static/js/main.a1ef4ec4.js",
+    "main.css": "/HPMA/static/css/main.dcfb30da.css",
+    "main.js": "/HPMA/static/js/main.0c9ba057.js",
+    "static/js/239.966eabc9.chunk.js": "/HPMA/static/js/239.966eabc9.chunk.js",
+    "static/js/977.dc08da06.chunk.js": "/HPMA/static/js/977.dc08da06.chunk.js",
+    "static/js/455.81a06280.chunk.js": "/HPMA/static/js/455.81a06280.chunk.js",
     "static/media/slick.svg": "/HPMA/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/HPMA/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/HPMA/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/HPMA/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/HPMA/index.html",
-    "main.9a9a8425.css.map": "/HPMA/static/css/main.9a9a8425.css.map",
-    "main.a1ef4ec4.js.map": "/HPMA/static/js/main.a1ef4ec4.js.map"
+    "main.dcfb30da.css.map": "/HPMA/static/css/main.dcfb30da.css.map",
+    "main.0c9ba057.js.map": "/HPMA/static/js/main.0c9ba057.js.map",
+    "239.966eabc9.chunk.js.map": "/HPMA/static/js/239.966eabc9.chunk.js.map",
+    "977.dc08da06.chunk.js.map": "/HPMA/static/js/977.dc08da06.chunk.js.map",
+    "455.81a06280.chunk.js.map": "/HPMA/static/js/455.81a06280.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a9a8425.css",
-    "static/js/main.a1ef4ec4.js"
+    "static/css/main.dcfb30da.css",
+    "static/js/main.0c9ba057.js"
   ]
 }
