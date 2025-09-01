@@ -41,12 +41,15 @@ const Navbar: React.FC = () => {
                   Contact
                 </button>
               </Link>
+              {/* <Link to="/login" className="bg-yellow-500 text-white px-3 py-2 rounded-lg hover:bg-yellow-600 transition">
+                Login
+              </Link> */}
             </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden font-semibold mt-auto">
               <button
-              
+
                 onClick={() => setIsOpen((v) => !v)}
                 aria-controls="mobile-menu"
                 className="p-2 rounded-lg focus:outline-none focus:ring"
@@ -93,16 +96,22 @@ const Navbar: React.FC = () => {
               >
                 Events
               </Link>
-              <Link 
-                to="/BookDemo" 
+              <Link
+                to="/BookDemo"
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 rounded-lg hover:bg-beige-200"
               >
                 Booking
               </Link>
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <button className="w-full bg-yellow-500 text-white px-5 py-2 rounded-lg hover:bg-yellow-600 transition">
+                <button className="w-auto bg-yellow-500 text-white px-16 py-2 mx-2 rounded-lg hover:bg-yellow-600 transition">
                   Contact
+                </button>
+              </Link>
+              <Link to="/login" 
+                onClick={() => setIsOpen(false)}>
+                <button className="w-auto bg-yellow-500 text-white px-16 py-2 rounded-lg hover:bg-yellow-600 transition">
+                  Login
                 </button>
               </Link>
             </div>

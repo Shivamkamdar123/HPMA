@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/HPMA/static/css/main.cd8ebb1f.css",
+    "main.js": "/HPMA/static/js/main.5c7d56a9.js",
+    "index.html": "/HPMA/index.html",
+    "main.cd8ebb1f.css.map": "/HPMA/static/css/main.cd8ebb1f.css.map",
+    "main.5c7d56a9.js.map": "/HPMA/static/js/main.5c7d56a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd8ebb1f.css",
+    "static/js/main.5c7d56a9.js"
+  ]
+}

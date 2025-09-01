@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "./firebase";
+// import { collection, addDoc } from "firebase/firestore";
+// import { db } from "./firebase";
 import Swal from "sweetalert2";
 
 export default function Contact() {
@@ -25,33 +25,49 @@ export default function Contact() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      await addDoc(collection(db, "demoBookings"), formData);
+  e.preventDefault();
 
+  try {
+    const response = await fetch("https://formspree.io/f/xovnleyz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       Swal.fire({
         title: "✅ Success!",
-        text: "Your message has been submitted successfully.",
+        text: "Your message has been sent successfully.",
         icon: "success",
         confirmButtonText: "Okay",
-        confirmButtonColor: "#fbbf24", // gold shade
-        background: "#fff8e1", // soft background
-        backdrop: `
-    rgba(0,0,0,0.4)
-    left top
-    no-repeat
-  `,
+        confirmButtonColor: "#fbbf24",
+        background: "#fff8e1",
+        backdrop: `rgba(0,0,0,0.4) left top no-repeat`,
       });
 
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      Swal.fire({
+        title: "⚠️ Error!",
+        text: "There was an issue sending your message. Please try again.",
+        icon: "error",
+        confirmButtonText: "Okay",
       });
-    } catch (error) {
-      console.error("Error adding document: ", error);
     }
-  };
+  } catch (error) {
+    console.error("Error sending message:", error);
+    Swal.fire({
+      title: "⚠️ Error!",
+      text: "Something went wrong. Please try again later.",
+      icon: "error",
+      confirmButtonText: "Okay",
+    });
+  }
+};
+
+  
   return (
     <section
       id="contact"

@@ -73,7 +73,7 @@ const programs: ProgramItem[] = [
 
 const Programs: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50 mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
+    <section  className="py-16 bg-gray-50 mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
           Our Programs

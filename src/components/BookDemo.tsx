@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "./firebase";
 
 interface BookDemoProps {
   onClose?: () => void;
 }
 
-// Remove this duplicate declaration
-
-
 const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -73,6 +73,10 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
     setIsSubmitting(true);
 
     try {
+      await addDoc(collection(db, "demoBookings"), {
+        ...formData,
+        formSubmitDate: serverTimestamp(),
+      });
       const result = await emailjs.send(
         "service_sh9tvq7",
         "template_erbi2ms",
@@ -139,9 +143,9 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
 
   return (
     <section className="relative bg-beige-100 py-10 px-6 overflow-hidden mt-14 mx-5 sm:mt-15 md:mt-18 lg:mt-12 ">
-        <h2 className="text-2xl font-bold text-burgundy-900 text-center mb-6">
-          Demo Class Booking Form
-        </h2>
+      <h2 className="text-2xl font-bold text-burgundy-900 text-center mb-6">
+        Demo Class Booking Form
+      </h2>
       <form
         id="BookDemo"
         className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-2xl space-y-4 transform transition-all duration-300 hover:shadow-xl"
@@ -165,9 +169,9 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
         {/* Gender */}
         <div className="flex flex-col">
           <label className="font-medium mb-1">Gender</label>
-          <select 
+          <select
             name="gender"
-            title ="Select gender"
+            title="Select gender"
             value={formData.gender}
             onChange={handleChange}
             className="border p-2 rounded"
@@ -185,7 +189,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
           <label className="font-medium mb-1">Age</label>
           <input
             type="number"
-            title = "Enter your age"
+            title="Enter your age"
             name="age"
             value={formData.age}
             onChange={handleChange}
@@ -229,7 +233,7 @@ const BookDemo: React.FC<BookDemoProps> = ({ onClose }) => {
           <label className="font-medium mb-1">Instrument to Learn</label>
           <select
             name="instrument"
-            title ="Select an instrument"
+            title="Select an instrument"
             value={formData.instrument}
             onChange={handleChange}
             className="border p-2 rounded"
