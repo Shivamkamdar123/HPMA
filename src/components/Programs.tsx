@@ -1,115 +1,102 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
-interface ProgramItem {
-  name: string;
-  image: string;
-  description: string;
+interface Item {
+  title: string;
+  description?: string;
 }
 
-const programs: ProgramItem[] = [
-  {
-    name: "Guitar",
-    image:
-      "https://cdn.pixabay.com/photo/2017/11/07/00/18/guitar-2925274_640.jpg",
-    description:
-      "A versatile string instrument used in classical and modern music.",
-  },
-  {
-    name: "Tabla",
-    image:
-      "https://images.pexels.com/photos/16743021/pexels-photo-16743021.jpeg",
-    description:
-      "A pair of hand drums essential in Indian classical music. Known for its rhythmic depth.",
-  },
-  {
-    name: "Piano",
-    image: "https://images.pexels.com/photos/2043571/pexels-photo-2043571.jpeg",
-    description:
-      "A timeless instrument for both classical and contemporary music.",
-  },
-  {
-    name: "Flute",
-    image:
-      "https://images.pexels.com/photos/20555922/pexels-photo-20555922.jpeg",
-    description:
-      "A woodwind instrument known for its melodious tone in Indian ragas and Western orchestras.",
-  },
-  {
-    name: "Harmonium",
-    image:
-      "https://i.pinimg.com/1200x/0e/ec/31/0eec313b5d51f29ad4db4a7e2357c9c1.jpg",
-    description:
-      "A keyboard instrument producing sound with reeds, widely used in Indian music.",
-  },
-  {
-    name: "Saxophone",
-    image:
-      "https://cdn.pixabay.com/photo/2017/09/21/18/46/saxophone-2772907_1280.jpg",
-    description:
-      "A brass woodwind instrument, iconic in jazz and blues.",
-  },
-  {
-    name: "Ukele",
-    image: "https://cdn.pixabay.com/photo/2021/11/13/09/44/ukulele-6790888_1280.jpg",
-    description:
-      "A Hawaiian small guitar-like instrument with cheerful sound.",
-  },
-  {
-    name: "Violin",
-    image:
-      "https://cdn.pixabay.com/photo/2015/11/25/05/08/violin-1061240_1280.jpg",
-    description:
-      "A bowed string instrument, essential in orchestras and classical music",
-  },
-  {
-    name: "Octapad",
-    image:
-      "https://i.pinimg.com/1200x/b2/9e/dd/b29edd253df856aed4efa9d8e46042eb.jpg",
-    description:
-      "An electronic percussion instrument, essentially a compact drum machine, that utilizes eight touch-sensitive pads to trigger various sounds and samples.",
-  },
-
+const certificationCourses: Item[] = [
+  { title: "Praveshika Certificate", description: "Beginner certificate in performing arts" },
+  { title: "Sangeetika Junior Diploma", description: "Entry-level music certification" },
+  { title: "Geethika Senior Diploma", description: "Senior-level music certification" },
+  { title: "Certificate in Performing Art" },
 ];
+
+const diplomaCourses: Item[] = [
+  { title: "Madhyama Diploma", description: "Intermediate diploma in performing arts" },
+  { title: "Vid Diploma", description: "Advanced training diploma" },
+  { title: "Kala Ratna with Diploma", description: "Honors with diploma in performing art" },
+  { title: "Advanced Diploma in Performing Art" },
+  { title: "B.A. (1st to 3rd Year)" },
+  { title: "B.P.A. (1st to 3rd Year)" },
+  { title: "Master of Arts" },
+  { title: "Master of Performing Arts" },
+  { title: "Elective Classical Vocal" },
+  { title: "Elective Sugam Sangeet" },
+  { title: "Bachelor of Arts (1 Year)" },
+  { title: "B.A. Instrumental (1 Year)" },
+];
+
+const subjects: Item[] = [
+  { title: "Guitar" },
+  { title: "Violin" },
+  { title: "Sitaar" },
+  { title: "Tabla" },
+  { title: "Singing / Vocal" },
+  { title: "Piano" },
+  { title: "Flute" },
+  { title: "Octapad" },
+  { title: "Drums" },
+  { title: "Keyboard" },
+  { title: "Benjo" },
+  { title: "Dholak" },
+  { title: "Home Tutor (All Instruments)" },
+];
+
+const Section: React.FC<{ title: string; items: Item[] }> = ({ title, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="bg-white shadow-md rounded-2xl mb-6 overflow-hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex justify-between items-center px-6 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold text-lg"
+      >
+        {title}
+        {isOpen ? <ChevronUp /> : <ChevronDown />}
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="px-6 py-4 bg-gray-50"
+          >
+            <ul className="grid sm:grid-cols-2 gap-3">
+              {items.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="p-3 bg-white rounded-lg shadow hover:shadow-md transition"
+                >
+                  <h4 className="font-semibold text-gray-800">{item.title}</h4>
+                  {item.description && (
+                    <p className="text-sm text-gray-600 mt-1">{item.description}</p>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const Programs: React.FC = () => {
   return (
-    <section  className="py-16 bg-gray-50 mt-12 mx-5 sm:mt-15 md:mt-20 lg:mt-16 ">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-4">
-          Our Programs
-        </h2> 
-        <p className="text-xl text-center mb-6">
-            Excellence in Music Education Since 2005
-          </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-          {programs.map((program, index) => (
-            <div
-              key={index}
-              className="relative group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl group-hover:scale-100 transition duration-300"
-            >
-              {/* Card Image */}
-              <img
-                src={program.image}
-                alt={program.name}
-                className="h-48 w-full object-cover"
-              />
+    <section className="py-16 px-6 max-w-6xl mx-auto">
+      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
+        🎶 Hidden Pearls Music Programs
+      </h2>
 
-              {/* Card Title */}
-              {/* <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {program.name}
-                </h3>
-              </div> */}
-
-              {/* Hover Popup */}
-              <div className="cursor-pointer absolute inset-0 bg-opacity-80 bg-black/50 text-white p-6 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition duration-300">
-                <h3 className="text-5xl font-bold mb-2">{program.name}</h3>
-                <p className="text-md">{program.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Section title="🎓 Certification Courses" items={certificationCourses} />
+      <Section title="🏅 Diploma Courses" items={diplomaCourses} />
+      <Section title="🎵 Instruments & Subjects" items={subjects} />
     </section>
   );
 };
