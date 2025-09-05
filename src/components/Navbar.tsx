@@ -104,16 +104,16 @@ const Navbar: React.FC = () => {
                 Booking
               </Link>
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                <button className="w-auto bg-yellow-500 text-white px-16 py-2 mx-2 rounded-lg hover:bg-yellow-600 transition">
+                <button className="w-full bg-yellow-500 text-white px-16 py-2 mx-2 my-2 rounded-lg hover:bg-yellow-600 transition">
                   Contact
                 </button>
               </Link>
-              <Link to="/login" 
+              {/* <Link to="/login" 
                 onClick={() => setIsOpen(false)}>
                 <button className="w-auto bg-yellow-500 text-white px-16 py-2 rounded-lg hover:bg-yellow-600 transition">
                   Login
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}
